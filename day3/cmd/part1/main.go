@@ -4,7 +4,6 @@ import (
 	"bufio"
 	"fmt"
 	"os"
-	"unicode"
 )
 
 func main() {
@@ -35,17 +34,16 @@ func main() {
 	}
 
 	fmt.Println("Part 1:", priority)
-
 }
 
 func prio(a rune) rune {
 	if a >= 'A' && a <= 'Z' {
-		a = unicode.ToLower(a) - 'A' - 5
+		a = a - 'A' + 27
 		return a
 	}
 
 	if a >= 'a' && a <= 'z' {
-		a = unicode.ToUpper(a) - 'A' + 1
+		a = a - 'a' + 1
 		return a
 	}
 
